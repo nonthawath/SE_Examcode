@@ -1,0 +1,6 @@
+cd C:\Program Files\MongoDB\Server\4.2\bin
+mongod.exe --dbpath C:\Users\Mongo_data
+
+
+handlebars ไว้ใช้ตอนตอบกลับเป็นรูปแบบ form หรือ อัพเดทต่างๆนาๆ .hbs!
+^ ใช้กับ <form> in addOr Edit
