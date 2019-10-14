@@ -1,0 +1,45 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/document" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{document._id}}">
+    <div class="form-group">
+        <label>#</label>
+        <input type="text" class="form-control" name="count" placeholder="ลำดับ" value="{{document.count}}">
+    
+    </div>
+    <div class="form-group">
+        <label>ชื่อ-นามสกุล</label>
+        <input type="text" class="form-control" name="fullName" placeholder="โปรดระบุชื่อจริงและนามสกุล" value="{{document.fullName}}">
+    
+    </div>
+    <div class="form-group">
+        <label>วัน/เดือน/ปี</label>
+        <input type="text" class="form-control" name="date" placeholder="โปรดระบุวัน/เดือน/ปี" value="{{document.date}}">
+
+    </div>
+    <div class="form-group">
+        <label>Total</label>
+        <input type="text" class="form-control" name="total" placeholder="โปรดระบุจำนวนเงิน" value="{{document.total}}">
+
+    </div>
+    <div class="form-group">
+        <label>Slip</label>
+        <input type="text" class="form-control" name="slipNumber" placeholder="โปรดรหัสใบเสร็จรับเงิน" value="{{document.slipNumber}}">
+
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>เวลา</label>
+            <input type="text" class="form-control" name="time" placeholder="โปรดระบุเวลา" value="{{document.time}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>รูปแบบสมาชิก</label>
+            <input type="text" class="form-control" name="typeCustomer" placeholder="โปรดระบุรูปแบบสมาชิก" value="{{document.typeCustomer}}">
+        </div>
+        
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info" onclick="return confirm('ระบบจะทำการบันทึกประวัติการแก้ไขครั้งนี้ท่านยังยืนยันหรือไม่ ?');"><i class="fa fa-check"></i> ยืนยัน</button>
+        <a class="btn btn-secondary" href="/document/list"><i class="fa fa-list-alt"></i> ดูรายชื่อทั้งหมด</a>
+    </div>
+</form>

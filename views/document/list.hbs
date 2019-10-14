@@ -1,0 +1,45 @@
+<div class="from-group float-right">
+<a class="btn btn-danger" href="/document/list"><i class="fa fa-list-alt"></i> ดูข้อมูลทั้งหมด</a>
+<a class="btn btn-secondary" href="/document"><i class="fa fa-list-alt"></i> กลับไปที่หน้าหลัก</a>
+</div>
+
+<h3> {{viewTitle}}</h3>
+
+
+
+<form action="/document" method="POST" autocomplete="off">
+<input class="form-control" id="myInput" type="text" placeholder="Search..">
+<br>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ชื่อ-นามสกุล</th>
+            <th>ว/ด/ป</th>
+            <th>เวลา</th>
+            <th>รูปแบบสมาชิก</th>
+            <th>จำนวนเงิน</th>
+            <th>หมายเลขใบเสร็จรับเงิน</th>
+
+            
+        </tr>
+    </thead>
+    <tbody id="myTable">
+        {{#each list}}
+        <tr>
+            <td>{{this.count}}</td>
+            <td>{{this.fullName}}</td>
+            <td>{{this.date}}</td>
+            <td>{{this.time}}</td>
+            <td>{{this.typeCustomer}}</td>
+            <td>{{this.total}}</td>
+            <td>{{this.slipNumber}}</td>
+            <td>
+                <a href="/document/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/document/delete/{{this._id}}" onclick="return confirm('ระบบจะทำการบันทึกประวัติการลบครั้งนี้ท่านยังยืนยันหรือไม่ ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</form>
